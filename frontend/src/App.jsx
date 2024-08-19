@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Container, ContainerList } from './styles/styles';
+import { Button, Container, ContainerGrid, ContainerList, Input, ListIcons } from './styles/styles';
+import { FcFullTrash, FcCheckmark } from "react-icons/fc";
 
 export default function App() {
   const [list, setList] = useState([]);
@@ -21,17 +22,22 @@ export default function App() {
     <>
       <Container>
         <ContainerList>
-          <input
-            type="text"
-            placeholder="O que eu tenho que fazer..."
-            onChange={handleInputChange}
-            value={newTask}
-          />
-          <button onClick={ClickAdicionar}>Adicionar</button>
-
+          <ContainerGrid>
+            <Input
+              type="text"
+              placeholder="O que eu tenho que fazer..."
+              onChange={handleInputChange}
+              value={newTask}
+            />
+            <Button onClick={ClickAdicionar}>Adicionar</Button>
+          </ContainerGrid>
           <ul>
             {list.map(item => (
-              <li key={item.id}>{item.task}</li>
+              <ListIcons key={item.id}>
+                <FcCheckmark />
+                <li >{item.task}</li>
+                <FcFullTrash />
+              </ListIcons>
             ))}
           </ul>
         </ContainerList>
