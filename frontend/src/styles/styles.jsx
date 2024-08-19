@@ -15,13 +15,18 @@ export const ContainerList = styled.div`
     min-height: 350px;
     border-radius: 5px;
 
+    ul{
+        padding: 0;
+        margin-top: 40px;
+    }
+
 `
 
 export const ContainerGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    width: calc(120% - 20px);
+    width: calc(132% - 20px);
     margin: 0 10px;
 `
 export const Input = styled.input`
@@ -49,10 +54,18 @@ export const Button = styled.button`
 
 `
 export const ListIcons = styled.div`
-    background: #e4e4e4 ;
+    background: ${props => props.isFinished ? "#e8ff8b" : "#e4e4e4"} ;
     box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
     border-radius: 5px;
     height: 60px;
-    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    li{
+        list-style: none;
+    }
 
 `

@@ -14,7 +14,8 @@ export default function App() {
   function ClickAdicionar() {
     setList([...list, {
       id: uuidv4(),
-      task: newTask
+      task: newTask,
+      finished: false
     }]);
   }
 
@@ -22,6 +23,7 @@ export default function App() {
     <>
       <Container>
         <ContainerList>
+
           <ContainerGrid>
             <Input
               type="text"
@@ -31,15 +33,17 @@ export default function App() {
             />
             <Button onClick={ClickAdicionar}>Adicionar</Button>
           </ContainerGrid>
+
           <ul>
             {list.map(item => (
-              <ListIcons key={item.id}>
+              <ListIcons key={item.id} isFinished={item.finished}>
                 <FcCheckmark />
                 <li >{item.task}</li>
                 <FcFullTrash />
               </ListIcons>
             ))}
           </ul>
+
         </ContainerList>
       </Container>
     </>
