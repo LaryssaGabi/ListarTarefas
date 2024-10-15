@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Container = styled.div`
     background: linear-gradient(90deg, #383838 0%,#000000 81.25%);
     width: 100vw;
@@ -18,6 +19,13 @@ export const ContainerList = styled.div`
     ul{
         padding: 0;
         margin-top: 40px;
+    }
+
+    h3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
     }
 
 `
@@ -52,6 +60,10 @@ export const Button = styled.button`
     background: #4c3b8f;    
    }
 
+   &:active{
+    opacity: 0.6;
+   }
+
 `
 export const ListIcons = styled.div`
     background: ${props => props.isFinished ? "#e8ff8b" : "#e4e4e4"} ;
@@ -63,9 +75,11 @@ export const ListIcons = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
+    
 
     li{
         list-style: none;
     }
 
 `
+
